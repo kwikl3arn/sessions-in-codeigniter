@@ -33,7 +33,7 @@ class Demo_Controller extends CI_Controller {
         } else {
             $id = $this->input->post("uname");
             $pass = $this->input->post("upass");
-            $verify = $this->AN_Model->userchk($id, $pass);
+            $verify = $this->Demo_Model->userchk($id, $pass);
             if ($verify == 1) {
                 $result = $this->session->userdata['sessiondata'];
 
@@ -43,6 +43,10 @@ class Demo_Controller extends CI_Controller {
                 $this->load->view('login');
             }
         }
+    }
+  public function hme() {
+       // $this->sess();
+        $this->load->view('home');
     }
      public function lout() {
 
